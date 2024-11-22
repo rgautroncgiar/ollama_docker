@@ -2,7 +2,7 @@
 FROM ollama/ollama:latest AS model_stage
 
 # Start the Ollama service to pull the model
-RUN ollama serve & sleep 5 && ollama pull llama3.2:1b
+RUN ollama serve & sleep 5 && ollama pull llama3.2:3b
 
 # Stage 2: Build the final image
 FROM ollama/ollama:latest

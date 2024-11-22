@@ -1,15 +1,18 @@
 import os
-import csv
 import ollama
 
-def analyze_text_with_ollama(text_content):
+def analyze_text_with_ollama(csv_content):
     """
-    Use the Ollama model to analyze the text content and classify it as trees, weeds, or crops.
+    Use the Ollama model to analyze the raw CSV content and classify it as trees, weeds, or crops.
     """
     # Prepare the prompt for classification
-    prompt = f"Classify the following text as describing trees, weeds, or crops: '{text_content}'. Provide the results in a tabular way like a csv with each gender and species, along with their class."
+    prompt = (
+        f"For each row of the following CSV, classify plants into their categories, either as 'tree', 'crop', or 'weed'."
+        f" Add a new column with 'plant_category' header and inferred categories. Do not comment, just provide the raw csv. Source file :'{csv_content}"
+        f" If a weed or a tree is also a crop, classify it as a crop."
+    )
     
-    response = ollama.chat(model='llama3.2:1b', messages=[
+    response = ollama.chat(model='llama3.2:3b', messages=[
         {
             'role': 'user',
             'content': prompt,
@@ -53,20 +56,16 @@ def process_csv_files(test_images_dir):
 
         print(f"Processing CSV: {file}")
         try:
-            # Read and analyze the content of the CSV
+            # Read the full content of the CSV as a single string
             with open(file_path, 'r') as csv_file:
-                reader = csv.reader(csv_file)
-                classifications = []
-                for row in reader:
-                    # Join the row content as a single string and analyze
-                    text_content = " ".join(row)
-                    classification = analyze_text_with_ollama(text_content)
-                    classifications.append(f"Text: {text_content}\nClassification: {classification}\n")
-                
-                # Combine all classifications and save them
-                result = "\n".join(classifications)
-                save_result(file_path, result)
-                print(f"Saved analysis for {file}.\n")
+                csv_content = csv_file.read()
+
+            # Analyze the full CSV content
+            classification_result = analyze_text_with_ollama(csv_content)
+
+            # Save the result
+            save_result(file_path, classification_result)
+            print(f"Saved analysis for {file}.\n")
         except Exception as e:
             print(f"Error processing {file}: {e}\n")
 
