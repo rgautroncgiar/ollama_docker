@@ -14,7 +14,7 @@ def analyze_images_with_ollama(prompt, image_files_paths):
                 messages=[
                     {
                         "role": "user",
-                        "content": prompt,
+                        "content": prompt + f" \n FYI: image path is {image_file_path}",
                         "images": [image_file_path],  # Send image as binary
                     }
                 ],
@@ -67,8 +67,8 @@ if __name__ == "__main__":
     image_files_paths = get_image_paths(test_images_dir)
 
     prompt = (
-        "Provide me with a list of answers to the following questions, "
-        "as in a .txt file (with carriage return as separator):\n"
+        "Based on the image(s) captured from a small smartphone, provide me with a list of answers to the following questions (with carriage return as separator):\n"
+        "-general description of the cropping plot\n"
         "-is it an agroforestry system?\n"
         "-is the system diversified?\n"
         "-is soil covered?\n"
