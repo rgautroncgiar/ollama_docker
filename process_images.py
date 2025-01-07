@@ -76,8 +76,8 @@ if __name__ == "__main__":
         "-second present crop?\n"
         "-third present crop?\n"
         "-other present crops?\n"
-        "ADDITIONAL INSTRUCTIONS: ONLY WANTED OUTPUT -> answer as a COMMA SEPARATED VALUES file with a first column with the question, second column with the closed answer to the corresponding question, and third column with your comments if relevant.\n"
         "REMARK: regarding present crops, answer only if relevant; the order of the crops follow their abundance in the picture."
+        "EXPECTED ANSWER: ANSWER WITH ONLY A CSV FILE!!! first column with the corresponding question, second column with the closed answer to the corresponding question, and third column with your comments if relevant.\n"
     )
 
     # Call the function with correct argument order
