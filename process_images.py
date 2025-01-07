@@ -76,7 +76,7 @@ if __name__ == "__main__":
         "-second present crop?\n"
         "-third present crop?\n"
         "-other present crops?\n"
-        "additional instructions: format the answer as a csv file with a first column with the question, second column with the closed answer to the corresponding question, and third column with your comments if relevant; keep it as compact as possible.\n"
+        "additional instructions: format the answer as a COMMA SEPARATED VALUES file with a first column with the question, second column with the closed answer to the corresponding question, and third column with your comments if relevant; keep it as compact as possible.\n"
         "regarding present crops, answer only if relevant; the order of the crops follow their abundance in the picture."
     )
 
