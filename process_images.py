@@ -67,13 +67,17 @@ if __name__ == "__main__":
     image_files_paths = get_image_paths(test_images_dir)
 
     prompt = (
-        "Based on the image(s) captured from a small smartphone, provide me with a list of answers to the following questions (with carriage return as separator):\n"
+        "Based on the image(s) captured from a cheap smartphone in Africa, provide me with a list of answers to the following questions:\n"
         "-general description of the cropping plot\n"
         "-is it an agroforestry system?\n"
         "-is the system diversified?\n"
         "-is soil covered?\n"
-        "-what crops are present (maximum 3)?\n"
-        "additional instructions: do not comment, just provide the straight answers (e.g., yes/no or relevant element if closed question), keep it as compact as possible."
+        "-first present crop?\n"
+        "-second present crop?\n"
+        "-third present crop?\n"
+        "-other present crops?\n"
+        "additional instructions: format the answer as a csv file with a first column with the question, second column with the closed answer to the corresponding question, and third column with your comments if relevant; keep it as compact as possible.\n"
+        "regarding present crops, answer only if relevant; the order of the crops follow their abundance in the picture."
     )
 
     # Call the function with correct argument order
