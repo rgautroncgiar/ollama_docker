@@ -1,25 +1,32 @@
 import os
 import ollama
 
-def analyze_text_with_ollama(csv_content):
+def analyze_images_with_ollama(prompt, image_files_paths):
     """
-    Use the Ollama model to analyze the raw CSV content and classify it as trees, weeds, or crops.
+    Use the Ollama model to analyze image content and classify it as trees, weeds, or crops.
     """
-    # Prepare the prompt for classification
-    prompt = (
-        f"For each row of the following CSV, classify plants into their categories, either as 'tree', 'crop', or 'weed'."
-        f" Add a new column with 'plant_category' header and inferred categories. Do not comment, just provide the raw csv. Source file :'{csv_content}"
-        f" If a weed or a tree is also a crop, classify it as a crop."
-    )
+    results = []
+
+    for image_file_path in image_files_paths:
+        try:
+            response = ollama.chat(
+                model="llama3.2-vision",
+                messages=[
+                    {
+                        "role": "user",
+                        "content": prompt,
+                        "images": [image_file_path],  # Send image as binary
+                    }
+                ],
+            )
+            # Extract and store the classification response
+            content = response.get("message", {}).get("content", "No response")
+            results.append((image_file_path, content))
+
+        except Exception as e:
+            results.append((image_file_path, f"Error: {e}"))
     
-    response = ollama.chat(model='llama3.2:3b', messages=[
-        {
-            'role': 'user',
-            'content': prompt,
-        },
-    ])
-    # Extract and return the classification
-    return response.get('message', {}).get('content', 'No response')
+    return results
 
 def save_result(file_path, result):
     """
@@ -36,40 +43,43 @@ def save_result(file_path, result):
     with open(result_path, "w") as f:
         f.write(result)
 
-def process_csv_files(test_images_dir):
+def get_image_paths(test_images_dir):
     """
-    Process all CSV files in the test_images directory, classify their text content, and save results.
+    Gather all image files in the specified directory and return their full paths.
     """
     # Verify that the test_images directory exists
     if not os.path.isdir(test_images_dir):
-        print(f"Directory {test_images_dir} does not exist.")
-        return
+        raise ValueError(f"Directory {test_images_dir} does not exist.")
 
-    # Iterate over all CSV files in the directory
-    for file in os.listdir(test_images_dir):
-        file_path = os.path.join(test_images_dir, file)
-
-        # Skip non-CSV files
-        if not file.lower().endswith('.csv'):
-            print(f"Skipping non-CSV file: {file}")
-            continue
-
-        print(f"Processing CSV: {file}")
-        try:
-            # Read the full content of the CSV as a single string
-            with open(file_path, 'r') as csv_file:
-                csv_content = csv_file.read()
-
-            # Analyze the full CSV content
-            classification_result = analyze_text_with_ollama(csv_content)
-
-            # Save the result
-            save_result(file_path, classification_result)
-            print(f"Saved analysis for {file}.\n")
-        except Exception as e:
-            print(f"Error processing {file}: {e}\n")
-
+    image_files_paths = [
+        os.path.join(test_images_dir, f)
+        for f in os.listdir(test_images_dir)
+        if f.lower().endswith((".png", ".jpg", ".jpeg", ".bmp", ".gif"))
+    ]
+    
+    if not image_files_paths:
+        raise ValueError('No images found')
+    
+    return image_files_paths
+        
 if __name__ == "__main__":
     test_images_dir = "./test_images"  # Adjust path as needed
-    process_csv_files(test_images_dir)
-    print("All CSV files processed. Results saved to result/")
+    image_files_paths = get_image_paths(test_images_dir)
+
+    prompt = (
+        "Provide me with a list of answers to the following questions, "
+        "as in a .txt file (with carriage return as separator):\n"
+        "-is it an agroforestry system?\n"
+        "-is the system diversified?\n"
+        "-is soil covered?\n"
+        "-what crops are present (maximum 3)?"
+    )
+
+    # Call the function with correct argument order
+    results = analyze_images_with_ollama(prompt, image_files_paths)
+
+    # Save each result to its corresponding .txt file
+    for file_path, content in results:
+        save_result(file_path, content)
+
+    print("All image files processed. Results saved to result/")
