@@ -70,14 +70,14 @@ if __name__ == "__main__":
         "Based on the image(s) captured from a cheap smartphone in Africa, provide me with a list of answers to the following questions:\n"
         "-general description of the cropping plot\n"
         "-is it an agroforestry system?\n"
-        "-is the system diversified?\n"
+        "-is the system diversified, i.e. with different grown crops?\n"
         "-is soil covered?\n"
         "-first present crop?\n"
         "-second present crop?\n"
         "-third present crop?\n"
         "-other present crops?\n"
         "additional instructions: format the answer as a COMMA SEPARATED VALUES file with a first column with the question, second column with the closed answer to the corresponding question, and third column with your comments if relevant; keep it as compact as possible.\n"
-        "regarding present crops, answer only if relevant; the order of the crops follow their abundance in the picture."
+        "regarding present crops, answer only if relevant; the order of the crops follow their abundance in the picture. ONLY PROVIDE THE CSV LIKE OUTPUT!"
     )
 
     # Call the function with correct argument order
