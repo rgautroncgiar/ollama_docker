@@ -72,7 +72,8 @@ if __name__ == "__main__":
         "-is it an agroforestry system?\n"
         "-is the system diversified?\n"
         "-is soil covered?\n"
-        "-what crops are present (maximum 3)?"
+        "-what crops are present (maximum 3)?\n"
+        "additional instructions: do not comment, just provide the straight answers (e.g., yes/no or relevant element if closed question), keep it as compact as possible."
     )
 
     # Call the function with correct argument order
