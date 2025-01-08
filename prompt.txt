@@ -2,18 +2,16 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide detaile
 
 1. General description of the cropping plot.
 2. Is it an agroforestry system (i.e., with trees within the plot)?
-3. Is the system diversified (e.g., multiple types of crops grown)?
+3. Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence.
 4. Is the soil earth visible within the plot?
 5. Are weeds (i.e. not crops) visible within the plot?
 6. Is the plot lightly sloped, steeply sloped, or flat?
-7. What is the first predominant crop present?
-8. What is the second predominant crop present?
-9. What is the third predominant crop present?
-10. Are there other crops present?
-11. Do field limits show trees?
+7. Are staple crops present?
+8. Are perennial crops present?
+9. Do field limits show trees?
 
 Important Instructions:
-- Only provide answers about present crops if they are relevant and if you can answer with high confidence, and list the crops in descending order of abundance observed in the image.
+- Only provide answers about present crops if they are relevant and if you can answer with high confidence from the image.
 - Deliver your answer exclusively in CSV format, structured as follows:
   - First column: The corresponding question.
   - Second column: A closed answer (e.g., Yes/No, crop names, cropping system type, etc.).
@@ -27,8 +25,6 @@ Is the system diversified?,Yes,Multiple crop types observed, including maize and
 Is the soil earth visible within the plot?,No,Soil is covered with mulch and crop residues.
 Are weeds visible within the plot?,Yes,Weeds are scattered across the plot.
 Is the plot lightly sloped, steeply sloped, or flat?,Lightly sloped,The slope is gentle and does not appear to hinder cultivation.
-First predominant crop present,Maize,Most abundant crop in the image.
-Second predominant crop present,Beans,Appears in clusters across the plot.
-Third predominant crop present,Cassava,Visible in smaller patches.
-Are there other crops present?,Yes,Groundnuts are sparsely scattered.
+Are staple crops present?,Yes,Maize is a staple crop dominating the plot.
+Are perennial crops present?,Yes,Cassava is visible as a perennial crop.
 Do field limits show trees?,Yes,Trees form a natural boundary around the plot.
