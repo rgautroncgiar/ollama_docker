@@ -1,9 +1,10 @@
-Analyze the image(s) taken with a basic smartphone in Africa and provide answers to the following questions **exclusively in CSV format**, following these instructions:
+Analyze the image(s) taken with a basic smartphone in Africa and **provide answers to the following 9 questions EXCLUSIVELY in CSV format**. Your CSV **MUST** follow these strict rules:
 
-1. **Questions** (in the exact order):
+--------------------------------------------------------------------------------------
+1) **QUESTIONS TO ANSWER** (in this exact order):
    1. "General description of the cropping plot."
    2. "Is it an agroforestry system (i.e., with trees WITHIN the plot)?"
-      - If trees are only on the boundaries, answer "No".
+      - If trees are only on boundaries, answer "No".
    3. "Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence."
    4. "Is the soil earth visible within the plot?"
    5. "Are weeds (i.e. not crops) visible within the plot? Take care, staple crops should NOT be considered weeds."
@@ -12,36 +13,26 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
    8. "Are perennial crops present?"
    9. "Do field limits show trees?"
 
-2. **Output Format**:
-   - Your **first line** must be the header, exactly:
+--------------------------------------------------------------------------------------
+2) **CSV FORMAT REQUIRED**:
+   - **No** introduction, **no** summary, **no** explanation. **Only** the CSV.
+   - **First line (header)**: 
+     ```
      "Question","Answer","Comments"
+     ```
+   - **Next 9 lines**: Each line corresponds to one question in the exact order above.
+     - Column 1 = **Exact question** (in quotes).
+     - Column 2 = **Short, closed answer** (e.g., "Yes", "No", "unsure", or a brief phrase).
+     - Column 3 = **Comments** (only if absolutely certain). If unsure, leave comments empty.
 
-   - Then provide **exactly nine rows**—one per question—using the same order as above:
-     - **Column 1**: The exact question text in quotes (matching the list).
-     - **Column 2**: A short, closed answer ("Yes", "No", "unsure", or a brief phrase).
-     - **Column 3**: Optional comments **only if you are certain** (otherwise, leave empty). Keep it short.
+--------------------------------------------------------------------------------------
+3) **ADDITIONAL GUIDELINES**:
+   - If you are **not 100% sure**, answer "unsure" and leave the third column empty.
+   - "Is it an agroforestry system?" → answer "Yes" **only** if there are clearly trees within the plot, not just on the boundaries.
+   - "Is the system diversified?" → answer "Yes" **only** if you confidently identify more than one crop type. Otherwise, "No" or "unsure".
+   - Keep your "Comments" concise, factual, and only when you are certain. Otherwise, leave it empty.
+   - **No** extra rows. **No** additional columns.
+   - **No** text after the 9th answer row.
 
-   - **No extra text** outside of the CSV. That means:
-     - No additional lines or columns before or after.
-     - No code blocks or formatting around the CSV.
-
-3. **Answering Guidelines**:
-   - If you are not 100% sure about a detail, answer "unsure" and leave the "Comments" column empty.
-   - If you cannot confidently identify the crops or the level of diversification, answer "unsure".
-   - "Is the system diversified?" → Only answer "Yes" if you clearly see more than one crop type and can identify them confidently.
-   - If you're only certain about a single crop, you can answer "No" or "unsure".
-   - Keep all answers concise, factual, and certain. Do not guess or speculate.
-
-4. **Sample CSV Output Example** (for structure only):
-"Question","Answer","Comments"
-"General description of the cropping plot","A small, mixed cropping plot with visible trees and shrubs","Trees and annual crops are interspersed."
-"Is it an agroforestry system (i.e., with trees WITHIN the plot)?","Yes","Trees are present among the crops."
-"Is the system diversified (e.g., multiple types of crops grown)?","Yes","Maize and beans visible."
-"Is the soil earth visible within the plot?","No","Soil is fully covered by mulch."
-"Are weeds (i.e. not crops) visible within the plot?","Yes","Weeds at plot edges."
-"Is the plot lightly sloped, steeply sloped, or flat?","Lightly sloped","Minor slope observed."
-"Are staple crops present?","Yes","Maize is visible."
-"Are perennial crops present?","Yes","Banana trees present."
-"Do field limits show trees?","Yes","Trees line the perimeter."
-
-Remember: **No extra text** besides your CSV output when you provide the final answer.
+--------------------------------------------------------------------------------------
+4) **SAMPLE CSV OUTPUT** (for structure only, do NOT copy/paste these answers):
