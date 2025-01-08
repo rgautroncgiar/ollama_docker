@@ -10,7 +10,7 @@ def analyze_images_with_ollama(prompt, image_files_paths):
     for image_file_path in image_files_paths:
         try:
             response = ollama.chat(
-                model="llama3.2-vision:90b",
+                model="llama3.2-vision:11b",
                 messages=[
                     {
                         "role": "user",
