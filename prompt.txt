@@ -19,11 +19,11 @@ Important Instructions:
 **Example CSV Structure:**
 
 Question,Answer,Comments
-General description of the cropping plot,"A small, mixed cropping plot with visible trees and shrubs","The plot includes both annual and perennial plants."
-Is it an agroforestry system?,Yes,"The presence of trees integrated with crops indicates agroforestry."
-Is the system diversified?,Yes,"Multiple crop types observed, including maize and beans."
-Is the soil covered?,Yes,"Soil is covered with mulch and crop residues."
-First predominant crop present,Maize,"Most abundant crop in the image."
-Second predominant crop present,Beans,"Appears in clusters across the plot."
-Third predominant crop present,Cassava,"Visible in smaller patches."
-Are there other crops present?,Yes,"Groundnuts are sparsely scattered."
+General description of the cropping plot,A small, mixed cropping plot with visible trees and shrubs,The plot includes both annual and perennial plants.
+Is it an agroforestry system?,Yes,The presence of trees integrated with crops indicates agroforestry.
+Is the system diversified?,Yes,Multiple crop types observed, including maize and beans.
+Is the soil covered?,Yes,Soil is covered with mulch and crop residues.
+First predominant crop present,Maize,Most abundant crop in the image.
+Second predominant crop present,Beans,Appears in clusters across the plot.
+Third predominant crop present,Cassava,Visible in smaller patches.
+Are there other crops present?,Yes,Groundnuts are sparsely scattered.
