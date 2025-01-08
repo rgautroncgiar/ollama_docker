@@ -10,7 +10,7 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide detaile
 8. Are there other crops present?
 
 Important Instructions:
-- Only provide answers about present crops if they are relevant, and list the crops in descending order of abundance observed in the image.
+- Only provide answers about present crops if they are relevant and if you can answer with high confidence, and list the crops in descending order of abundance observed in the image.
 - Deliver your answer exclusively in CSV format, structured as follows:
   - First column: The corresponding question.
   - Second column: A closed answer (e.g., Yes/No, crop names, etc.).
