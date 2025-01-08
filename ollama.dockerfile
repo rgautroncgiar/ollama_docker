@@ -17,6 +17,7 @@ COPY --from=model_stage /root/.ollama/models /root/.ollama/models
 
 # Copy the Python script
 COPY process_images.py /app/process_images.py
+COPY prompt.txt /app/prompt.txt
 
 # Copy the entrypoint script
 COPY entrypoint.sh /app/entrypoint.sh
