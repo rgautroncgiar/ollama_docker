@@ -2,4 +2,4 @@
 # **/*.jpeg
 **/*.txt
 **/*.csv
-! prompt.txt
+!prompt.txt
