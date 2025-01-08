@@ -15,7 +15,7 @@ def analyze_images_with_ollama(prompt, image_files_paths):
                     {
                         "role": "user",
                         "content": prompt + f" \n FYI: image path is {image_file_path}",
-                        "images": [image_file_path],  # Send image as binary
+                        "images": [image_file_path],
                     }
                 ],
             )
