@@ -16,6 +16,7 @@ Important Instructions:
   - First column: The corresponding question.
   - Second column: A closed answer (e.g., Yes/No, crop names, cropping system type, etc.).
   - Third column: Additional comments (if relevant).
+-NO NOT ADD ANY ANSWER HEADER OR COMMENTS TO THE output
 
 **Example of expected output:**
 Question,Answer,Comments
