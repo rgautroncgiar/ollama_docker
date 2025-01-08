@@ -10,7 +10,7 @@ def analyze_images_with_ollama(prompt, image_files_paths):
     for image_file_path in image_files_paths:
         try:
             response = ollama.chat(
-                model="llama3.2-vision:90b",
+                model="llama3.2-vision",
                 messages=[
                     {
                         "role": "user",
@@ -66,19 +66,8 @@ if __name__ == "__main__":
     test_images_dir = "./test_images"  # Adjust path as needed
     image_files_paths = get_image_paths(test_images_dir)
 
-    prompt = (
-        "Based on the image(s) captured from a cheap smartphone in Africa, provide me with a list of answers to the following questions:\n"
-        "-general description of the cropping plot\n"
-        "-is it an agroforestry system?\n"
-        "-is the system diversified, i.e. with different grown crops?\n"
-        "-is soil covered?\n"
-        "-first present crop?\n"
-        "-second present crop?\n"
-        "-third present crop?\n"
-        "-other present crops?\n"
-        "REMARK: regarding present crops, answer only if relevant; the order of the crops follow their abundance in the picture."
-        "EXPECTED ANSWER: ANSWER WITH ONLY A CSV FILE!!! first column with the corresponding question, second column with the closed answer to the corresponding question, and third column with your comments if relevant.\n"
-    )
+    with open('./prompt.txt', 'r') as file:
+        prompt = file.read()
 
     # Call the function with correct argument order
     results = analyze_images_with_ollama(prompt, image_files_paths)
