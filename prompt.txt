@@ -1,54 +1,54 @@
-Analyze the image(s) taken with a basic smartphone in Africa and provide answers to the following 9 questions EXCLUSIVELY in CSV format, following these instructions. Your CSV MUST follow the strict format requirements detailed below.
+ANALYZE IMAGE(S) AND PROVIDE 9 ANSWERS IN STRICT CSV FORMAT:
 
 --------------------------------------------------------------------------------------
-1) QUESTIONS TO ANSWER (in this exact order):
+1) QUESTIONS (IN THIS EXACT ORDER):
    1. "General description of the cropping plot."
    2. "Is it an agroforestry system (i.e., with trees WITHIN the plot)?"
-      - Definition: Agroforestry system means there are trees growing among or integrated with the crops within the plot, not just on the plot boundaries.
+      - DEFINITION: An agroforestry system has trees integrated WITHIN the plot (not just on boundaries).
    3. "Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence."
-      - Definition: A diversified system includes multiple distinct crop species grown in the same plot. Only answer "Yes" if you are certain more than one crop type is present.
+      - DEFINITION: Diversified means you see more than one distinct crop species. Answer “Yes” only if absolutely certain.
    4. "Is the soil earth visible within the plot?"
    5. "Are weeds (i.e. not crops) visible within the plot? Take care, staple crops should NOT be considered weeds."
-      - Definition: Weeds are plants growing without intentional planting; if it is a known staple crop, it is not a weed.
+      - DEFINITION: Weeds are any plants growing unintentionally that are not staple crops or crops you can identify.
    6. "Is the plot lightly sloped, steeply sloped, or flat?"
    7. "Are staple crops present?"
-      - Definition: Staple crops are those commonly grown and widely consumed for food (e.g., maize, cassava, rice, sorghum).
+      - DEFINITION: Staple crops are widely consumed as a main part of the diet (e.g., maize, cassava, rice).
    8. "Are perennial crops present?"
-      - Definition: Perennial crops are plants that live for more than two years and produce yields over multiple growing seasons (e.g., banana, coffee, fruit trees).
+      - DEFINITION: Perennials live more than two years (e.g., fruit trees, coffee, banana, etc.).
    9. "Do field limits show trees?"
 
 --------------------------------------------------------------------------------------
-2) OUTPUT FORMAT (CSV ONLY):
-   - No introduction, no summary, no explanation. Only the CSV.
-   - First line (header):
-     "Question","Answer","Comments"
-   - Next 9 lines: Each line corresponds to one question in the exact order above.
-     • Column 1 = The exact question text in quotes (matching the list above).
-     • Column 2 = A short, closed answer (e.g. "Yes", "No", "unsure", or a short phrase).
-     • Column 3 = Optional comments only if absolutely certain. If unsure, leave the third column empty.
-   - No extra rows, no extra columns, and no text after the 9th answer row.
+2) CSV OUTPUT FORMAT RULES (NO DEVIATIONS ALLOWED):
+   A) DO NOT provide any text, explanation, or lists before or after the CSV table.
+   B) The **first line** MUST be this exact header:
+      "Question","Answer","Comments"
+   C) Then provide exactly **9 lines**—one for each question in the order above:
+      • Column 1 (in quotes): The exact question text from above.
+      • Column 2: Short answer: "Yes", "No", "unsure", or a brief phrase if certain.
+      • Column 3: OPTIONAL COMMENTS ONLY IF 100% CERTAIN (leave empty if unsure).
+   D) NO EXTRA ROWS, NO EXTRA COLUMNS.
+   E) NO extra text (like “Here is a list of answers” or bullet points).
 
 --------------------------------------------------------------------------------------
-3) GUIDELINES FOR ANSWERS:
-   - If not 100% certain, answer "unsure" in the "Answer" column and leave "Comments" empty.
-   - For agroforestry, answer "Yes" only if trees are within the plot. If only on boundaries, answer "No".
-   - For system diversification, answer "Yes" only if you confidently identify more than one crop type.
-   - Keep the "Comments" column concise and only if you are sure.
-   - Do not guess or speculate. Use "unsure" if in doubt.
+3) ANSWERING GUIDELINES:
+   - If you are not fully certain of an answer, respond with "unsure" in the Answer column and leave Comments blank.
+   - For Agroforestry, say "Yes" ONLY if you see trees WITHIN the plot. If only on the boundary or you’re unsure, say "No".
+   - For Diversification, say "Yes" ONLY if you confidently see more than one distinct crop species. Otherwise, "No" or "unsure".
+   - Only identify crops if you are 100% certain they are actually present in the image. If not, say "unsure".
+   - Keep Comments brief and factual, or leave them empty if not sure.
 
 --------------------------------------------------------------------------------------
-4) EXAMPLE CSV OUTPUT (STRUCTURE ONLY, DO NOT COPY THESE ANSWERS):
+4) EXAMPLE (STRUCTURE ONLY — DO NOT COPY THESE ANSWERS VERBATIM):
 "Question","Answer","Comments"
-"General description of the cropping plot","A small, mixed cropping plot with visible trees","Trees and annual crops are interspersed."
-"Is it an agroforestry system (i.e., with trees WITHIN the plot)?","Yes","Trees growing among the crops."
-"Is the system diversified (e.g., multiple types of crops grown)?","Yes","Maize and beans identified."
-"Is the soil earth visible within the plot?","No","Soil is covered by plants."
-"Are weeds (i.e. not crops) visible within the plot?","Yes","Weeds between rows."
-"Is the plot lightly sloped, steeply sloped, or flat?","Lightly sloped","Minor incline observed."
-"Are staple crops present?","Yes","Maize is a staple crop here."
-"Are perennial crops present?","Yes","Banana plants visible."
-"Do field limits show trees?","Yes","Trees form the boundary."
+"General description of the cropping plot","A small, mixed cropping plot with visible trees","Includes maize and bean plants."
+"Is it an agroforestry system (i.e., with trees WITHIN the plot)?","Yes","Trees grow directly among crops."
+"Is the system diversified (e.g., multiple types of crops grown)?","Yes","Maize and beans are visible."
+"Is the soil earth visible within the plot?","No","Soil is covered by vegetation."
+"Are weeds (i.e. not crops) visible within the plot?","Yes","Non-crop plants around field edges."
+"Is the plot lightly sloped, steeply sloped, or flat?","Lightly sloped","Slope is gentle."
+"Are staple crops present?","Yes","Maize is recognized as a staple."
+"Are perennial crops present?","Yes","Banana trees are visible."
+"Do field limits show trees?","Yes","Trees line the boundary."
 
 --------------------------------------------------------------------------------------
-
 END OF PROMPT
