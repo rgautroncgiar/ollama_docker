@@ -1,45 +1,54 @@
-Analyze the image(s) taken with a basic smartphone in Africa and provide answers to the following questions **exclusively in CSV format**, following these instructions:
+Analyze the image(s) taken with a basic smartphone in Africa and provide answers to the following 9 questions **EXCLUSIVELY in CSV format**, following these instructions precisely:
 
-1. **Questions** (in the exact order):
+--------------------------------------------------------------------------------------
+1) **QUESTIONS TO ANSWER** (in this exact order):
    a. "General description of the cropping plot."
    b. "Is it an agroforestry system (i.e., with trees WITHIN the plot)?"
-      - If trees are only on the boundaries, answer "No".
+      - **Definition:** An agroforestry system has trees integrated WITHIN the plot (not just on boundaries).
    c. "Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence."
+      - **Definition:** Diversified means you see more than one distinct crop species. Answer “Yes” only if absolutely certain.
    d. "Is the soil earth visible within the plot?"
    e. "Are weeds (i.e. not crops) visible within the plot? Take care, staple crops should NOT be considered weeds."
+      - **Definition:** Weeds are any plants growing unintentionally that are not staple crops or crops you can identify.
    f. "Is the plot lightly sloped, steeply sloped, or flat?"
    g. "Are staple crops present?"
+      - **Definition:** Staple crops are widely consumed as a main part of the diet (e.g., maize, cassava, rice).
    h. "Are perennial crops present?"
+      - **Definition:** Perennials live more than two years (e.g., fruit trees, coffee, banana, etc.).
    i. "Do field limits show trees?"
 
-2. **Output Format**:
-   - Your **first line** must be the header, exactly:
-     "Question","Answer","Comments"
+--------------------------------------------------------------------------------------
+2) **CSV OUTPUT FORMAT RULES (STRICTLY FOLLOWED)**:
+   A) **ONLY** the CSV should be output. **No** additional text, explanations, or lists.
+   B) **First line (header):**
+      "Question","Answer","Comments"
+   C) **Next 9 lines:** Each line corresponds to one question in the exact order above.
+      - **Column 1:** The exact question text in quotes.
+      - **Column 2:** A short, closed answer ("Yes", "No", "unsure", or a brief phrase).
+      - **Column 3:** Optional comments **only if you are certain**. Leave empty if unsure.
+   D) **No extra rows or columns.**
+   E) **No text** before or after the CSV.
 
-   - Then provide **exactly nine rows**—one per question—using the same order as above:
-     - **Column 1**: The exact question text in quotes (matching the list).
-     - **Column 2**: A short, closed answer ("Yes", "No", "unsure", or a brief phrase).
-     - **Column 3**: Optional comments **only if you are certain** (otherwise, leave empty). Keep it short.
+--------------------------------------------------------------------------------------
+3) **GUIDELINES FOR ANSWERS**:
+   - If not **100% certain**, answer "unsure" in the "Answer" column and leave "Comments" empty.
+   - For "Is it an agroforestry system?", answer "Yes" **only** if trees are **within** the plot. If trees are only on boundaries or you're unsure, answer "No".
+   - For "Is the system diversified?", answer "Yes" **only** if you confidently identify **more than one** crop type. Otherwise, answer "No" or "unsure".
+   - Only identify crops in the "Comments" column if you are **100% certain** of their presence.
+   - Keep all answers **concise** and **factual**. Do **not** guess or speculate.
 
-   - **No extra text** outside of the CSV. That means:
-     - No additional lines or columns before or after.
-     - No code blocks or formatting around the CSV.
-
-3. **Answering Guidelines**:
-   - If you are not 100% sure about a detail, answer "unsure" and leave the "Comments" column empty.
-   - If you cannot confidently identify the crops or the level of diversification, answer "unsure".
-   - "Is the system diversified?" → Only answer "Yes" if you clearly see more than one crop type and can identify them confidently.
-   - If you're only certain about a single crop, you can answer "No" or "unsure".
-   - Keep all answers concise, factual, and certain. Do not guess or speculate.
-
-4. **Sample CSV Output Example** (for structure only):
+--------------------------------------------------------------------------------------
+4) **EXAMPLE CSV OUTPUT** (STRUCTURE ONLY — DO NOT COPY THESE ANSWERS):
 "Question","Answer","Comments"
-"General description of the cropping plot","A small, mixed cropping plot with visible trees and shrubs","Trees and annual crops are interspersed."
-"Is it an agroforestry system (i.e., with trees WITHIN the plot)?","Yes","Trees are present among the crops."
-"Is the system diversified (e.g., multiple types of crops grown)?","Yes","Maize and beans visible."
-"Is the soil earth visible within the plot?","No","Soil is fully covered by mulch."
-"Are weeds (i.e. not crops) visible within the plot?","Yes","Weeds at plot edges."
-"Is the plot lightly sloped, steeply sloped, or flat?","Lightly sloped","Minor slope observed."
-"Are staple crops present?","Yes","Maize is visible."
-"Are perennial crops present?","Yes","Banana trees present."
+"General description of the cropping plot","A small, mixed cropping plot with visible trees","Includes maize and bean plants."
+"Is it an agroforestry system (i.e., with trees WITHIN the plot)?","Yes","Trees grow directly among crops."
+"Is the system diversified (e.g., multiple types of crops grown)?","Yes","Maize and beans identified."
+"Is the soil earth visible within the plot?","No","Soil is covered by plants."
+"Are weeds (i.e. not crops) visible within the plot?","Yes","Weeds between crop rows."
+"Is the plot lightly sloped, steeply sloped, or flat?","Lightly sloped","Minor incline observed."
+"Are staple crops present?","Yes","Maize is recognized as a staple."
+"Are perennial crops present?","Yes","Banana plants visible."
 "Do field limits show trees?","Yes","Trees line the perimeter."
+
+--------------------------------------------------------------------------------------
+**END OF PROMPT**
