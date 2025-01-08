@@ -2,3 +2,4 @@
 # **/*.jpeg
 **/*.txt
 **/*.csv
+! prompt.txt
