@@ -20,7 +20,6 @@ def analyze_images_with_ollama(prompt, image_files_paths):
                         "images": [image_file_path],
                     }
                 ],
-                verbose=False  # minimize Ollama’s verbose output
             )
 
             # Adjust to match your actual Ollama response structure
