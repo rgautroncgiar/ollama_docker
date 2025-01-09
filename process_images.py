@@ -71,7 +71,7 @@ def get_image_paths(test_images_dir):
     return image_files_paths
         
 if __name__ == "__main__":
-    test_images_dir = "./test_images"  # Adjust path as needed
+    test_images_dir = "./kenya_fieldwork_media"  # Adjust path as needed
     image_files_paths = get_image_paths(test_images_dir)
 
     # Read the prompt from prompt.txt
