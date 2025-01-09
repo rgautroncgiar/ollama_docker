@@ -73,7 +73,8 @@ if __name__ == "__main__":
         prompt = file.read()
 
     # Analyze images with Ollama
-    results = analyze_images_with_ollama(prompt, image_files_paths)
+    test_size = 500
+    results = analyze_images_with_ollama(prompt, image_files_paths[:test_size])
 
     # Save each result to its corresponding .txt file
     for file_path, content in results:
