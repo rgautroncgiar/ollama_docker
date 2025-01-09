@@ -16,8 +16,8 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
       - **Definition:** Staple crops are widely consumed as a main part of the diet (e.g., maize, cassava, rice).
    h. "Are perennial crops present?"
       - **Definition:** Perennials live more than two years (e.g., fruit trees, coffee, banana, etc.).
-   i. "Do field limits show trees?"
-      - **Definition:** A tree typically exceeds 5 meters (16 feet) at maturity. This height threshold distinguishes trees from smaller woody plants such as shrubs and herbs.
+   i. "Do plot limits show trees?"
+      - **Definition:** Tree at tall plants (usually more than 5 meters). They can delimit a plot when they are planted in row.
 
 --------------------------------------------------------------------------------------
 2) **CSV OUTPUT FORMAT RULES (STRICTLY FOLLOWED)**:
