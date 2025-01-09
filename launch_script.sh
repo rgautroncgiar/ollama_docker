@@ -10,6 +10,6 @@ docker build -t llama-multimodal -f ./ollama.dockerfile .
 # Run the Docker container with GPU support and necessary configurations
 docker run --gpus=all --rm --privileged -it \
     -p 11434:11434 \
-    -v $(pwd)/test_images:/test_images \
+    -v $(pwd)/kenya_fieldwork_media:/test_images \
     -v $(pwd)/result:/result \
     llama-multimodal bash
