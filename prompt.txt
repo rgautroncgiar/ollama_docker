@@ -36,7 +36,7 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
    - If not **100% certain**, answer "unsure" in the "Answer" column and leave "Comments" empty.
    - For "Is it an agroforestry system?", answer "Yes" **only** if trees are **within** the plot. If trees are only on boundaries or you're unsure, answer "No".
    - For "Is the system diversified?", answer "Yes" **only** if you confidently identify **more than one** crop type. Otherwise, answer "No" or "unsure".
-   - For "Is the plot soil naked?", answer "Yes" **only** if **more than 50%** of the surface shows bare soil. If less than 50% is exposed, answer "No."
+   - For "Is the plot soil naked?", answer "Yes" **only** if **more than 50%** of the surface shows bare soil. If less than 50% is exposed, answer "No." If plants or weeds cover the surface, then the soil is not naked for this area.
    - Only identify crops in the "Comments" column if you are **100% certain** of their presence.
    - Keep all answers **concise** and **factual**. Do **not** guess or speculate.
 
