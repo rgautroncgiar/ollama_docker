@@ -8,7 +8,7 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
    c. "Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence."
       - **Definition:** Diversified means you see more than one distinct crop species. Answer “Yes” only if absolutely certain.
    d. "Is the plot soil naked?"
-      - **Definition:** A soil is considered naked if soil earth is visible on **more than 50%** of the plot surface. Visible naked earth soil is exposed ground characterized by bare, textured surfaces in shades of brown, gray, or black, often showing cracks, clumps, or erosion patterns. If less than 50% is exposed, answer "No."
+      - **Definition:** A soil is considered naked if soil earth is visible on **more than 30%** of the plot surface. Visible naked earth soil is exposed ground characterized by bare, textured surfaces in shades of brown, gray, or black, often showing cracks, clumps, or erosion patterns **without vegetation**. If less than 30% is exposed, answer "No."
    e. "Are weeds (i.e. not crops) visible within the plot? Take care, staple crops should NOT be considered weeds."
       - **Definition:** Weeds are any plants growing unintentionally that are not staple crops or crops you can identify.
    f. "Is the plot lightly sloped, steeply sloped, or flat?"
