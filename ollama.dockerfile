@@ -10,7 +10,7 @@ FROM ollama/ollama:latest
 # Install basic dependencies for Python
 RUN apt-get update && apt-get install -y python3-pip wget curl unzip && \
     pip install --upgrade pip && \
-    pip install Pillow ollama
+    pip install Pillow ollama tqdm
 
 # Copy the pulled model from the first stage
 COPY --from=model_stage /root/.ollama/models /root/.ollama/models

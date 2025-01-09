@@ -1,5 +1,6 @@
 import os
 import ollama
+from tqdm import tqdm  # pip install tqdm
 
 def analyze_images_with_ollama(prompt, image_files_paths):
     """
@@ -7,7 +8,8 @@ def analyze_images_with_ollama(prompt, image_files_paths):
     """
     results = []
 
-    for image_file_path in image_files_paths:
+    # Wrap the iteration in a tqdm progress bar
+    for image_file_path in tqdm(image_files_paths, desc="Processing images"):
         try:
             response = ollama.chat(
                 model="llama3.2-vision:11b",
@@ -18,9 +20,10 @@ def analyze_images_with_ollama(prompt, image_files_paths):
                         "images": [image_file_path],
                     }
                 ],
+                verbose=False  # minimize Ollama’s verbose output
             )
 
-            # If your Ollama response is nested differently, adjust accordingly:
+            # Adjust to match your actual Ollama response structure
             content = response.get("message", {}).get("content", "No response")
             results.append((image_file_path, content))
 
@@ -32,21 +35,14 @@ def analyze_images_with_ollama(prompt, image_files_paths):
 def save_result(file_path, result):
     """
     Save the result in /result/<file_name>.txt
-    where <file_name> preserves the image's base name (no extension).
+    where <file_name> is the image's base name (no extension).
     """
     # Ensure the results directory exists
     os.makedirs("result", exist_ok=True)
 
-    # Example 1: use just the base name (strip extension)
     file_name_no_ext = os.path.splitext(os.path.basename(file_path))[0]
     result_path = os.path.join("result", f"{file_name_no_ext}.txt")
 
-    # --- Alternatively, if you want to preserve the extension, do this: ---
-    # file_name_with_ext = os.path.basename(file_path)       # e.g. image1.jpg
-    # result_path = os.path.join("result", f"{file_name_with_ext}.txt") 
-    # ----------------------------------------------------------------------
-
-    # Write the result to a text file
     with open(result_path, "w", encoding="utf-8") as f:
         f.write(result)
 
@@ -54,11 +50,9 @@ def get_image_paths(test_images_dir):
     """
     Gather all image files in the specified directory and return their full paths.
     """
-    # Verify that the test_images directory exists
     if not os.path.isdir(test_images_dir):
         raise ValueError(f"Directory '{test_images_dir}' does not exist.")
 
-    # Collect image paths
     image_files_paths = [
         os.path.join(test_images_dir, f)
         for f in os.listdir(test_images_dir)
@@ -78,6 +72,7 @@ if __name__ == "__main__":
     with open("./prompt.txt", "r", encoding="utf-8") as file:
         prompt = file.read()
 
+    # Analyze images with Ollama
     results = analyze_images_with_ollama(prompt, image_files_paths)
 
     # Save each result to its corresponding .txt file
