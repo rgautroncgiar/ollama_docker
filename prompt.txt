@@ -1,4 +1,4 @@
-Analyze the image(s) taken with a basic smartphone in Africa and provide answers to the following 9 questions **EXCLUSIVELY in CSV format**, following these instructions precisely:
+Analyze the image(s) taken with a basic smartphone in Africa and provide answers to the following 9 questions **EXCLUSIVELY in CSV format**. Consider the field plot in the foreground. Follow these instructions precisely:
 
 --------------------------------------------------------------------------------------
 1) **QUESTIONS TO ANSWER** (in this exact order):
@@ -8,7 +8,7 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
    c. "Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence."
       - **Definition:** Diversified means you see more than one distinct crop species. Answer “Yes” only if absolutely certain.
    d. "Is the plot soil naked?"
-      - **Definition:** A soil is considered naked if soil earth is visible on most of the plot surface (e.g., on more than 50% of the plot surface).
+      - **Definition:** A soil is considered naked if soil earth is visible on **more than 50%** of the plot surface. If less than 50% is exposed, answer "No."
    e. "Are weeds (i.e. not crops) visible within the plot? Take care, staple crops should NOT be considered weeds."
       - **Definition:** Weeds are any plants growing unintentionally that are not staple crops or crops you can identify.
    f. "Is the plot lightly sloped, steeply sloped, or flat?"
@@ -36,6 +36,7 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
    - If not **100% certain**, answer "unsure" in the "Answer" column and leave "Comments" empty.
    - For "Is it an agroforestry system?", answer "Yes" **only** if trees are **within** the plot. If trees are only on boundaries or you're unsure, answer "No".
    - For "Is the system diversified?", answer "Yes" **only** if you confidently identify **more than one** crop type. Otherwise, answer "No" or "unsure".
+   - For "Is the plot soil naked?", answer "Yes" **only** if **more than 50%** of the surface shows bare soil. If less than 50% is exposed, answer "No."
    - Only identify crops in the "Comments" column if you are **100% certain** of their presence.
    - Keep all answers **concise** and **factual**. Do **not** guess or speculate.
 
@@ -45,7 +46,7 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
 "General description of the cropping plot","A small, mixed cropping plot with visible trees","Includes maize and bean plants."
 "Is it an agroforestry system (i.e., with trees WITHIN the plot)?","Yes","Trees grow directly among crops."
 "Is the system diversified (e.g., multiple types of crops grown)?","Yes","Maize and beans identified."
-"Is the soil earth visible within the plot?","No","Soil is covered by plants."
+"Is the plot soil naked?","No","Soil is covered by plants on most of the surface."
 "Are weeds (i.e. not crops) visible within the plot?","Yes","Weeds between crop rows."
 "Is the plot lightly sloped, steeply sloped, or flat?","Lightly sloped","Minor incline observed."
 "Are staple crops present?","Yes","Maize is recognized as a staple."
