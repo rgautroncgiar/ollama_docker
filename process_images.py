@@ -60,7 +60,7 @@ def get_image_paths(test_images_dir):
     ]
     
     if not image_files_paths:
-        raise ValueError("No images found in the directory.")
+        raise ValueError(f"No images found in the {test_images_dir}.")
     
     return image_files_paths
         
