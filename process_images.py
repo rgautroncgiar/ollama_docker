@@ -28,6 +28,7 @@ def analyze_images_with_ollama(prompt, image_files_paths):
             results.append((image_file_path, content))
 
         except Exception as e:
+            print(f'Exception occured: {e}')
             results.append((image_file_path, f"Error: {str(e)}"))
     
     return results
