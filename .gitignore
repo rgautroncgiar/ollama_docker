@@ -5,3 +5,5 @@
 !prompt.txt
 **/*.~lock*
 **/*.zip
+copy_results.sh
+kenya_*/
