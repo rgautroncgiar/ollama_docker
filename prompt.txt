@@ -3,10 +3,10 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
 --------------------------------------------------------------------------------------
 1) **QUESTIONS TO ANSWER** (in this exact order):
    a. "General description of the cropping plot." 
-      - **Definition:** Trees: Tall, woody plants (often over 5 meters) with a single main trunk and a well-developed canopy. Tree are **taller** than shrubs and crops and weed. Identify a plant as a tree if and only if bark and trunk is visible. Shrubs: Woody plants usually under 5 meters, branching low to the ground with multiple stems. Crops: Plants deliberately grown and managed for food or other uses (e.g., maize, rice, cassava). Weeds: Unwanted or spontaneously occurring plants, not deliberately planted or recognized as crops.
+      - **Definition:** Trees: Tall, woody plants (often over 5 meters) with a single main trunk and a well-developed canopy. Tree are **taller** than shrubs and crops and weed. Identify a plant as a **tree** if and only if **bark and trunk is visible**!! Shrubs: Woody plants usually under 5 meters, branching low to the ground with multiple stems. Crops: Plants deliberately grown and managed for food or other uses (e.g., maize, rice, cassava). Weeds: Unwanted or spontaneously occurring plants, not deliberately planted or recognized as crops.
    b. "Is it an agroforestry system (i.e., with trees WITHIN the plot)?"
-      - **Definition:** An agroforestry system has trees integrated WITHIN the plot (not just on boundaries).
-   c. "Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence."
+      - **Definition:** An agroforestry system has trees integrated WITHIN the plot (not just on boundaries). Identify a plant as a **tree** if and only if **bark and trunk is visible**!!
+   c. "Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence. Precise the crops identified in comment."
       - **Definition:** Diversified means you see more than one distinct crop species. Answer “Yes” only if absolutely certain.
    d. "Is the plot soil naked?"
       - **Definition:** A soil is considered naked if soil earth is visible on **more than 30%** of the plot surface. Visible naked earth soil is exposed ground characterized by bare, textured surfaces in shades of brown, gray, or black, often showing cracks, clumps, or erosion patterns **without vegetation**. If less than 30% is exposed, answer "No."
@@ -14,11 +14,11 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
       - **Definition:** Weeds are any plants growing unintentionally that are not staple crops or crops you can identify.
    f. "Is the plot lightly sloped, steeply sloped, or flat?"
    g. "Are staple crops present?"
-      - **Definition:** Staple crops are widely consumed as a main part of the diet (e.g., maize, cassava, rice).
+      - **Definition:** Staple crops are widely consumed as a main part of the diet (e.g., maize, cassava, rice). Make sure this answer is consitent with question c.
    h. "Are perennial crops present?"
       - **Definition:** Perennials live more than two years (e.g., fruit trees, coffee, banana, etc.).
    i. "Do plot limits show trees?"
-      - **Definition:** Tree at tall plants (usually more than 5 meters). They can delimit a plot when they are planted in row.
+      - **Definition:** Tree at tall plants (usually more than 5 meters). Identify a plant as a **tree** if and only if **bark and trunk is visible**!! They can delimit a plot when they are planted in row.
 
 --------------------------------------------------------------------------------------
 2) **CSV OUTPUT FORMAT RULES (STRICTLY FOLLOWED)**:
