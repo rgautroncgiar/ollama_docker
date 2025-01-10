@@ -1,45 +1,53 @@
+
 Analyze the image(s) taken with a basic smartphone in Africa and provide answers to the following 9 questions **EXCLUSIVELY in CSV format**. Consider the field plot in the foreground. Follow these instructions precisely:
 
 --------------------------------------------------------------------------------------
 1) **QUESTIONS TO ANSWER** (in this exact order):
-   a. "General description of the cropping plot." 
-      - **Definition:** Trees: Tall, woody plants (often over 5 meters) with a single main trunk and a well-developed canopy. Shrubs: Woody plants usually under 5 meters, branching low to the ground with multiple stems. Crops: Plants deliberately grown and managed for food or other uses (e.g., maize, rice, cassava). Weeds: Unwanted or spontaneously occurring plants, not deliberately planted or recognized as crops.
-   b. "Is it an agroforestry system (i.e., with trees WITHIN the plot)?"
-      - **Definition:** An agroforestry system has trees integrated WITHIN the plot (not just on boundaries).
-   c. "Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence."
-      - **Definition:** Diversified means you see more than one distinct crop species. Answer “Yes” only if absolutely certain.
-   d. "Is the plot soil naked?"
-      - **Definition:** A soil is considered naked if soil earth is visible on **more than 30%** of the plot surface. Visible naked earth soil is exposed ground characterized by bare, textured surfaces in shades of brown, gray, or black, often showing cracks, clumps, or erosion patterns **without vegetation**. If less than 30% is exposed, answer "No."
-   e. "Are weeds (i.e. not crops) visible within the plot? Take care, staple crops should NOT be considered weeds."
-      - **Definition:** Weeds are any plants growing unintentionally that are not staple crops or crops you can identify.
-   f. "Is the plot lightly sloped, steeply sloped, or flat?"
-   g. "Are staple crops present?"
-      - **Definition:** Staple crops are widely consumed as a main part of the diet (e.g., maize, cassava, rice).
-   h. "Are perennial crops present?"
-      - **Definition:** Perennials live more than two years (e.g., fruit trees, coffee, banana, etc.).
-   i. "Do plot limits show trees?"
-      - **Definition:** Tree at tall plants (usually more than 5 meters). They can delimit a plot when they are planted in row.
+   a. "General description of the cropping plot."  
+      - **Definition:**  
+        - **Trees**: Tall, woody plants typically over 5 meters (≈16 ft) with a single trunk or main stem supporting branches and foliage above the ground.  
+          - Note: Herbaceous plants (like bananas) are **not** trees.  
+        - **Shrubs**: Woody plants usually under 5 meters, branching low to the ground with multiple stems.  
+        - **Crops**: Plants deliberately grown and managed for food or other uses (e.g., maize, rice, cassava).  
+        - **Weeds**: Unwanted or spontaneously occurring plants, not deliberately planted or recognized as crops.  
+   b. "Is it an agroforestry system (i.e., with trees WITHIN the plot)?"  
+      - **Definition:** An agroforestry system has trees integrated WITHIN the plot (not just on boundaries).  
+   c. "Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence."  
+      - **Definition:** Diversified means you see more than one distinct crop species. Answer “Yes” only if absolutely certain.  
+   d. "Is the plot soil naked?"  
+      - **Definition:** A soil is considered naked if soil earth is visible on **more than 30%** of the plot surface. Visible naked earth soil is exposed ground characterized by bare, textured surfaces in shades of brown, gray, or black, often showing cracks, clumps, or erosion patterns **without vegetation**. If less than 30% is exposed, answer "No."  
+   e. "Are weeds (i.e. not crops) visible within the plot? Take care, staple crops should NOT be considered weeds."  
+      - **Definition:** Weeds are any plants growing unintentionally that are not staple crops or crops you can identify.  
+   f. "Is the plot lightly sloped, steeply sloped, or flat?"  
+   g. "Are staple crops present?"  
+      - **Definition:** Staple crops are widely consumed as a main part of the diet (e.g., maize, cassava, rice).  
+   h. "Are perennial crops present?"  
+      - **Definition:** Perennials live more than two years (e.g., fruit trees, coffee, banana, etc.).  
+        - Note: Even though bananas are perennials, they are herbaceous and **not** considered trees.  
+   i. "Do plot limits show trees?"  
+      - **Definition:** Trees are tall plants (usually more than 5 meters) that can delimit a plot when planted in a row.
 
 --------------------------------------------------------------------------------------
 2) **CSV OUTPUT FORMAT RULES (STRICTLY FOLLOWED)**:
-   A) **ONLY** the CSV should be output. **No** additional text, explanations, or lists.
-   B) **First line (header):**
-      "Question","Answer","Comments"
-   C) **Next 9 lines:** Each line corresponds to one question in the exact order above.
-      - **Column 1:** The exact question text in quotes.
-      - **Column 2:** A short, closed answer ("Yes", "No", "unsure", or a brief phrase).
-      - **Column 3:** Optional comments **only if you are certain**. Leave empty if unsure.
-   D) **No extra rows or columns.**
+   A) **ONLY** the CSV should be output. **No** additional text, explanations, or lists.  
+   B) **First line (header):**  
+      "Question","Answer","Comments"  
+   C) **Next 9 lines:** Each line corresponds to one question in the exact order above.  
+      - **Column 1:** The exact question text in quotes.  
+      - **Column 2:** A short, closed answer ("Yes", "No", "unsure", or a brief phrase).  
+      - **Column 3:** Optional comments **only if you are certain**. Leave empty if unsure.  
+   D) **No extra rows or columns.**  
    E) **No text** before or after the CSV.
 
 --------------------------------------------------------------------------------------
 3) **GUIDELINES FOR ANSWERS**:
-   - If not **100% certain**, answer "unsure" in the "Answer" column and leave "Comments" empty.
-   - For "Is it an agroforestry system?", answer "Yes" **only** if trees are **within** the plot. If trees are only on boundaries or you're unsure, answer "No".
-   - For "Is the system diversified?", answer "Yes" **only** if you confidently identify **more than one** crop type. Otherwise, answer "No" or "unsure".
-   - For "Is the plot soil naked?", answer "Yes" **only** if **more than 50%** of the surface shows bare soil. If less than 50% is exposed, answer "No." If plants or weeds cover the surface, then the soil is not naked for this area.
-   - Only identify crops in the "Comments" column if you are **100% certain** of their presence.
-   - Keep all answers **concise** and **factual**. Do **not** guess or speculate.
+   - If not **100% certain**, answer "unsure" in the "Answer" column and leave "Comments" empty.  
+   - For "Is it an agroforestry system?", answer "Yes" **only** if trees are **within** the plot. If trees are only on boundaries or you're unsure, answer "No".  
+   - For "Is the system diversified?", answer "Yes" **only** if you confidently identify **more than one** crop type. Otherwise, answer "No" or "unsure".  
+   - For "Is the plot soil naked?", answer "Yes" **only** if **more than 50%** of the surface shows bare soil. If less than 50% is exposed, answer "No." If plants or weeds cover the surface, then the soil is not naked for this area.  
+   - Only identify crops in the "Comments" column if you are **100% certain** of their presence.  
+   - Keep all answers **concise** and **factual**. Do **not** guess or speculate.  
+   - Make sure answers are consistent: for example, you cannot say that trees are visible on boundaries in question a. and answer "No" for question i.
 
 --------------------------------------------------------------------------------------
 4) **EXAMPLE CSV OUTPUT** (STRUCTURE ONLY — DO NOT COPY THESE ANSWERS):
