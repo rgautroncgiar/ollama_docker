@@ -8,14 +8,15 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
         - **Shrubs:** Woody plants usually under 5 meters, branching low to the ground with multiple stems.
         - **Crops:** Plants deliberately grown and managed for food or other uses (e.g., maize, rice, cassava).
         - **Weeds:** Unwanted or spontaneously occurring plants, not deliberately planted or recognized as crops.
-      - **Important:** Ensure that trees are correctly identified by confirming the visibility of bark and trunk.
-      - **Consistency Requirement:** If staple crops are identified in this description, ensure that question g reflects their presence accordingly.
+      - **Important:** 
+        - Ensure that trees are correctly identified by confirming the visibility of bark and trunk.
+        - **Consistency Enforcement:** The presence or absence of staple crops mentioned here must align with the answers to question g.
 
    b. "Is it an agroforestry system (i.e., with trees WITHIN the plot)?"
       - **Definition:** An agroforestry system has trees integrated **within** the plot (not just on boundaries). A plant is identified as a **tree** only if **both bark and trunk are clearly visible**.
 
    c. "Is the system diversified (e.g., multiple types of crops grown)? Answer only if you can identify crops with high confidence. Precise the crops identified in comment."
-      - **Definition:** Diversified means you see more than one distinct crop species. Answer “Yes” only if absolutely certain.
+      - **Definition:** Diversified means you see more than one distinct crop species. Answer “Yes” only if **more than one** crop type is confidently identified. If only one crop type is identified, answer "No".
 
    d. "Is the plot soil naked?"
       - **Definition:** A soil is considered naked if soil earth is visible on **more than 30%** of the plot surface. Visible naked earth soil is exposed ground characterized by bare, textured surfaces in shades of brown, gray, or black, often showing cracks, clumps, or erosion patterns **without vegetation**. If less than 30% is exposed, answer "No."
@@ -26,7 +27,11 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
    f. "Is the plot lightly sloped, steeply sloped, or flat?"
 
    g. "Are staple crops present?"
-      - **Definition:** Staple crops are widely consumed as a main part of the diet (e.g., maize, cassava, rice). Ensure consistency with question a. If staple crops are mentioned in the general description, this answer must be "Yes," and vice versa.
+      - **Definition:** Staple crops are widely consumed as a main part of the diet (e.g., maize, cassava, rice). 
+      - **Consistency Enforcement:** 
+        - If staple crops are **mentioned** in the general description (question a), this answer **must** be "Yes."
+        - If staple crops are **not mentioned** in the general description, this answer **must** be "No."
+        - Avoid contradictions between questions a and g.
 
    h. "Are perennial crops present?"
       - **Definition:** Perennials live more than two years (e.g., fruit trees, coffee, banana, etc.).
@@ -50,14 +55,20 @@ Analyze the image(s) taken with a basic smartphone in Africa and provide answers
 3) **GUIDELINES FOR ANSWERS**:
    - If not **100% certain**, answer "unsure" in the "Answer" column and leave "Comments" empty.
    - **Consistency Enforcement:**
-     - For "Are staple crops present?" (question g), if you answered "Yes," ensure that the "General description of the cropping plot" (question a) reflects the presence of staple crops in its comments.
-     - Conversely, if "Are staple crops present?" is answered as "No," ensure that the general description does not mention any staple crops.
+     - **Between Questions a and g:**
+       - If staple crops are mentioned in question a, then question g **must** be answered "Yes."
+       - If staple crops are not mentioned in question a, then question g **must** be answered "No."
+     - **Between Questions a and i:**
+       - If trees are described in question a as being within the plot, ensure that question i reflects the presence of trees at the plot limits appropriately.
+   - **Tree Identification:**
+     - Only classify a plant as a **tree** if **both bark and trunk are clearly visible** in the image.
+     - Avoid misclassifying shrubs, crops, or weeds as trees.
    - For "Is it an agroforestry system?", answer "Yes" **only** if trees are **within** the plot. If trees are only on boundaries or you're unsure, answer "No".
    - For "Is the system diversified?", answer "Yes" **only** if you confidently identify **more than one** crop type. Otherwise, answer "No" or "unsure".
    - For "Is the plot soil naked?", answer "Yes" **only** if **more than 30%** of the surface shows bare soil. If less than 30% is exposed, answer "No." If plants or weeds cover the surface, then the soil is not naked for this area.
    - Only identify crops in the "Comments" column if you are **100% certain** of their presence.
    - Keep all answers **concise** and **factual**. Do **not** guess or speculate.
-   - Make sure answers are consistent: for example, you cannot say that trees are visible on boundaries in question a. and answer "No" for question i.
+   - Ensure all answers are **internally consistent** to avoid contradictions across questions.
 
 --------------------------------------------------------------------------------------
 4) **EXAMPLE CSV OUTPUT** (STRUCTURE ONLY — DO NOT COPY THESE ANSWERS):
