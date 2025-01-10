@@ -66,15 +66,15 @@ def get_image_paths(test_images_dir):
         
 if __name__ == "__main__":
     test_images_dir = "./test_images"  # Adjust path as needed
-    image_files_paths = get_image_paths(test_images_dir)
+    test_size = 10
+    image_files_paths = get_image_paths(test_images_dir)[:test_size]
 
     # Read the prompt from prompt.txt
     with open("./prompt.txt", "r", encoding="utf-8") as file:
         prompt = file.read()
 
     # Analyze images with Ollama
-    test_size = 500
-    results = analyze_images_with_ollama(prompt, image_files_paths[:test_size])
+    results = analyze_images_with_ollama(prompt, image_files_paths)
 
     # Save each result to its corresponding .txt file
     for file_path, content in results:
